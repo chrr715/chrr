@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrr</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
+    
+
+</head>
+
+<body>
+
+    <div class="frame">
+        <a class="site-name" href="index.html">Chrr</a>
+    </div>
+    
+    <nav class="nav">
+        <ul>
+            <li><a class="nav-menu" href="chrr.html">RIRO</a></li>
+            <li><a class="nav-menu" href="taste.html">TASTE</a></li>
+            <li><a class="nav-menu" href="inspo.html">INSPO</a></li>
+            <li><a class="nav-menu" href="project.html">PROJECT</a></li>
+            <li><a class="nav-menu" href="memo.html">MEMO</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="main-list">
+        <a href="https://youtu.be/aBsj0FbQ0I4?si=TuO54M4Tv8eJ6LLQ" target="_blank">
+            <img src="소금바밍.jpeg" alt="main-img" class="main-img">
+        </a>
+    </div>
+
+    <!-- 드래그 가능한 원들 -->
+    <div class="container" id="circle-container"></div>
+
+    <div id="footer-placeholder"></div>
+
+
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("푸터 로딩 오류:", error));
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
