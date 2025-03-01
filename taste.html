@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+
+
     <script src="script.js" defer></script>
 </head>
 
@@ -32,12 +35,10 @@
 
     <div class="introduce-container">
 
-    <h1 class="main-introduce">얕고 넓은 치리로의 취향</h1>
-
-    <!-- RECENT -->
+    <!-- YOUTUBE -->
     <div class="introduce">
-        <h2 class="middle-introduce">RECENT</h2>
-        <p class="small-introduce">남들의 대화 왜이렇게 재밌는지...</p>
+        <h2 class="middle-introduce">YOUTUBE</h2>
+        <p class="small-introduce">남들의 대화 엿듣기</p>
             
         <div class="video-wrapper">
             <button class="scroll-btn left" onclick="scrollVideos(-1)">‹</button>
@@ -63,7 +64,7 @@
     <!-- MUSIC -->
     <div class="introduce">
         <h2 class="middle-introduce">MUSIC</h2>
-        <p class="small-introduce">가사보다는 리듬 위주로 듣는 편.. 도입부 3초가 플레이리스트 합격을 결정한다.</p>
+        <p class="small-introduce">가사보다는 리듬 위주로 듣는 편<br>도입부 3초가 플레이리스트 합격을 결정한다.</p>
             
         <div class="video-wrapper">
             <button class="scroll-btn left" onclick="scrollVideos(-1)">‹</button>
@@ -117,28 +118,36 @@
         <h2 class="middle-introduce">PODCAST</h2>
         <p class="small-introduce">치리로의 출퇴근메이트</p>
 
-        <div class="podcast-wrapper">
-            
-
-            <div class="podcast-container">
-
-                <iframe allow="autoplay *; encrypted-media *;" 
-                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
-                src="https://embed.podcasts.apple.com/kr/podcast/%EC%97%AC%EB%91%98%ED%86%A1/id1617974770"></iframe>
-
-                <iframe allow="autoplay *; encrypted-media *;" 
-                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
-                src="https://embed.podcasts.apple.com/kr/podcast/%EA%B0%95%EC%86%8C%ED%8C%9F/id1701380319"></iframe>
+        <a href="https://podcasts.apple.com/kr/podcast/%EC%97%AC%EB%91%98%ED%86%A1/id1617974770" target="_blank">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/6d/d1/43/6dd14301-bf7f-dcff-7d09-5026b89221dc/mza_2040389892221158379.jpg/600x600bb.webp" 
+                 alt="팟캐스트 썸네일" class="podcast-thumbnail">
+                 
+        
+        <a href="https://podcasts.apple.com/kr/podcast/%EA%B0%95%EC%86%8C%ED%8C%9F/id1701380319" target="_blank">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/52/06/82/520682ad-ca77-b3e7-d506-3314ab149df5/mza_2514494111452559082.jpg/600x600bb.webp"
+                 alt="팟캐스트 썸네일" class="podcast-thumbnail">
 
 
-            </div>
+        </a>
+        
+        <style>
+            .podcast-container {
+                display: flex;
+                justify-content: center; /* 가운데 정렬 */
+                align-items: center; /* 세로 중앙 정렬 */
+                gap: 250px; /* 이미지 사이 간격 조정 */
+            }
+        
+            .podcast-thumbnail {
+                width: 150px; /* 원본 600px의 1/5 크기 */
+                height: auto;
+                border: 2px solid black;
+            }
+        </style>
+        
             
             
         </div>
     </div> 
-    
-    <footer class="footer">
-        <h3>안녕하세요 지금 만드는 중인데 어렵지만 재밌어효.</h3>
-    </footer>
 
 </body>

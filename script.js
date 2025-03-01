@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function () {
     const scrollAmount = 420; // 한 번 클릭할 때 이동하는 거리
 
@@ -15,31 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 // 내비게이션 색깔 고정
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // 현재 URL에서 파일명 가져오기
     const currentPage = window.location.pathname.split("/").pop();
-    
-    // 모든 내비게이션 메뉴 가져오기
     const navLinks = document.querySelectorAll(".nav-menu");
 
-    // 각 메뉴를 돌면서 현재 페이지와 href가 일치하면 스타일 변경
     navLinks.forEach(link => {
         if (link.getAttribute("href") === currentPage) {
-            link.style.color = "#23cef9cf";  // 선택된 메뉴 색 변경
+            link.style.color = "#23cef9cf";
         }
     });
 });
 
-
-
-// 원
-
-
-
+// 원 생성 및 드래그 기능
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("circle-container");
     const numCircles = 4; // 원 개수 설정
@@ -71,9 +60,140 @@ document.addEventListener("DOMContentLoaded", () => {
             circle.style.cursor = "grab";
         });
 
-        // 드래그 중 클릭 방지 (하이퍼링크 영향 없음)
         circle.addEventListener("click", (e) => {
             if (dragging) e.preventDefault();
         });
     }
+});
+
+
+// 방명록
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop();
+    const form = document.getElementById("form");
+    
+    if (currentPage === "memo.html") {
+        loadMessages();
+        form.style.display = "block"; // memo.html에서 폼 표시
+    } else {
+        form.style.display = "none"; // 다른 페이지에서는 폼 숨기기
+    }
+});
+
+function getRandomPosition() {
+    const navHeight = document.querySelector("nav")?.offsetHeight || 50; // 내비게이션 높이
+    const safeMargin = 20; // 안전 여백
+    
+    const x = Math.random() * (window.innerWidth - 200 - safeMargin) + safeMargin;
+    const y = Math.random() * (window.innerHeight - 100 - navHeight - safeMargin) + navHeight + safeMargin;
+    
+    return { x, y };
+}
+
+function addMessage() {
+    const name = document.getElementById("name").value;
+    const msg = document.getElementById("message").value;
+    if (!name || !msg) return alert("치리로에게 하고 싶은 말을 남겨주세요");
+    
+    const { x, y } = getRandomPosition();
+    createMessageElement(name, msg, x, y, true);
+    saveMessage({ name, msg, x, y });
+    
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+}
+
+function createMessageElement(name, msg, x, y, animate) {
+    if (document.querySelector(`[data-id='${name}-${msg}']`)) return; // 중복 생성 방지
+    
+    const messageDiv = document.createElement("div");
+    messageDiv.className = "message";
+    messageDiv.style.left = `${x}px`;
+    messageDiv.style.top = `${y}px`;
+    messageDiv.setAttribute("data-id", `${name}-${msg}`);
+    messageDiv.innerHTML = `${msg}<br><span class='author'>- ${name} -</span> <span class='delete' onclick='removeMessage(this)'>X</span>`;
+    
+    let offsetX, offsetY, dragging = false;
+
+    messageDiv.addEventListener("pointerdown", (e) => {
+        dragging = true;
+        offsetX = e.clientX - messageDiv.offsetLeft;
+        offsetY = e.clientY - messageDiv.offsetTop;
+        messageDiv.style.cursor = "grabbing";
+        messageDiv.style.zIndex = 1000;
+    });
+
+    document.addEventListener("pointermove", (e) => {
+        if (!dragging) return;
+        messageDiv.style.left = `${e.clientX - offsetX}px`;
+        messageDiv.style.top = `${e.clientY - offsetY}px`;
+    });
+
+    document.addEventListener("pointerup", () => {
+        if (dragging) {
+            updateMessagePosition(name, msg, messageDiv.style.left, messageDiv.style.top);
+        }
+        dragging = false;
+        messageDiv.style.cursor = "grab";
+    });
+    
+    if (animate) {
+        messageDiv.style.opacity = "0";
+        document.body.appendChild(messageDiv);
+        setTimeout(() => messageDiv.style.opacity = "1", 100);
+    } else {
+        document.body.appendChild(messageDiv);
+    }
+}
+
+function saveMessage(message) {
+    const messages = JSON.parse(localStorage.getItem("messages")) || [];
+    messages.push(message);
+    localStorage.setItem("messages", JSON.stringify(messages));
+}
+
+function updateMessagePosition(name, msg, x, y) {
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+    messages = messages.map(m => (m.name === name && m.msg === msg ? { ...m, x: parseInt(x), y: parseInt(y) } : m));
+    localStorage.setItem("messages", JSON.stringify(messages));
+}
+
+function loadMessages() {
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage !== "memo.html") return;
+    
+    const messages = JSON.parse(localStorage.getItem("messages")) || [];
+    messages.forEach(({ name, msg, x, y }) => {
+        createMessageElement(name, msg, parseInt(x), parseInt(y), false);
+    });
+}
+
+function removeMessage(element) {
+    const messageDiv = element.parentElement;
+    const messageId = messageDiv.getAttribute("data-id");
+
+    // 화면에서 삭제
+    messageDiv.remove();
+
+    // localStorage에서 삭제
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+    messages = messages.filter(m => `${m.name}-${m.msg}` !== messageId);
+    localStorage.setItem("messages", JSON.stringify(messages));
+}
+
+
+// 모바일자바
+document.addEventListener("DOMContentLoaded", function () {
+    const navMenu = document.querySelector(".nav");
+
+    document.addEventListener("click", function (event) {
+        // 화면 왼쪽 50px 안쪽 클릭 시 메뉴 열기/닫기
+        if (window.innerWidth <= 768) { // 모바일에서만 적용
+            if (event.clientX < 50) { 
+                navMenu.classList.add("active"); // 메뉴 열기
+            } else if (navMenu.classList.contains("active")) { 
+                navMenu.classList.remove("active"); // 다른 곳 클릭하면 메뉴 닫기
+            }
+        }
+    });
 });

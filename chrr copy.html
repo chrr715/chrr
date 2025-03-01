@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인생 그래프</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        .timeline {
+            position: relative;
+            width: 200px;
+        }
+
+        /* 중앙 세로 선 */
+        .line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: black;
+            transform: translateX(-50%);
+        }
+
+        .events {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .event {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 원 스타일 */
+        .circle {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        /* 연도 및 설명 */
+        .year {
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="timeline">
+        <div class="line"></div>
+        <div class="events">
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2001</div>
+                <div class="description">출생</div>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2005</div>
+                <div class="description">유치원 졸업</div>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2010</div>
+                <div class="description">초등학교 졸업</div>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2015</div>
+                <div class="description">고등학교 입학</div>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2020</div>
+                <div class="description">대학교 졸업</div>
+            </div>
+            <div class="event">
+                <div class="circle"></div>
+                <div class="year">2025</div>
+                <div class="description">사회생활 시작</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

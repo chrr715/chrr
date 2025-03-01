@@ -9,7 +9,11 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+
+
     <script src="script.js" defer></script>
+
 </head>
 
 
@@ -31,8 +35,15 @@
         </ul>
     </nav>
 
-    <footer class="footer">
-        <h3>안녕하세요 지금 만드는 중인데 어렵지만 재밌어효.</h3>
-    </footer>
+
+    <div id="form">
+        <label for="name">누구냐 넌?</label><br>
+        <input type="text" id="name" placeholder="이름" required><br>
+        
+        <label for="message">하고 싶은 말</label><br>
+        <input type="text" id="message" placeholder="메시지" required>
+        <br>
+        <button onclick="addMessage()">등록</button>
+    </div>
 
 </body>

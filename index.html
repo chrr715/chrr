@@ -8,7 +8,9 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
-    
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+
+
 
 </head>
 
@@ -29,11 +31,9 @@
     </nav>
     
 
-    <div class="main-list">
-        <a href="https://youtu.be/aBsj0FbQ0I4?si=TuO54M4Tv8eJ6LLQ" target="_blank">
-            <img src="소금바밍.jpeg" alt="main-img" class="main-img">
-        </a>
-    </div>
+    <img src="소금바밍.jpeg" alt="main-img" class="main-img">
+
+
 
     <!-- 드래그 가능한 원들 -->
     <div class="container" id="circle-container"></div>
@@ -41,15 +41,6 @@
     <div id="footer-placeholder"></div>
 
 
-
-    <script>
-        fetch("footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            })
-            .catch(error => console.error("푸터 로딩 오류:", error));
-    </script>
 
     <script src="script.js"></script>
 
