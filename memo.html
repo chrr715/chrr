@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 
 <head>
@@ -11,35 +10,42 @@
     <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 
-
     <script src="script.js" defer></script>
+    <style>
+        body {
+            overflow-y: scroll;
+            /* Enable vertical scrolling */
+            width: 100%;
+            height: auto;
+            /* Adjust height to content */
+            position: relative;
+            /* Needed for absolute positioning of messages */
+            padding-bottom: 100px;
+            /* Add padding to the bottom */
+        }
+    </style>
 
 </head>
 
-
-
-
 <body>
-    <div class="frame">
+    <header class="frame">
         <a class="site-name" href="index.html">Chrr</a>
-    </div>
-
+    </header>
 
     <nav class="nav">
         <ul>
-        <li><a class="nav-menu" href="chrr.html">RIRO</a></li>
-        <li><a class="nav-menu" href="taste.html">TASTE</a></li>
-        <li><a class="nav-menu" href="inspo.html">INSPO</a></li>
-        <li><a class="nav-menu" href="project.html">PROJECT</a></li>
-        <li><a class="nav-menu" href="memo.html">MEMO</a></li>
+            <li><a class="nav-menu" href="chrr.html">RIRO</a></li>
+            <li><a class="nav-menu" href="taste.html">TASTE</a></li>
+            <li><a class="nav-menu" href="inspo.html">INSPO</a></li>
+            <li><a class="nav-menu" href="project.html">PROJECT</a></li>
+            <li><a class="nav-menu" href="memo.html">MEMO</a></li>
         </ul>
     </nav>
-
 
     <div id="form">
         <label for="name">누구냐 넌?</label><br>
         <input type="text" id="name" placeholder="이름" required><br>
-        
+
         <label for="message">하고 싶은 말</label><br>
         <input type="text" id="message" placeholder="메시지" required>
         <br>
@@ -47,3 +53,5 @@
     </div>
 
 </body>
+
+</html>

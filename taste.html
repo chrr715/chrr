@@ -1,153 +1,97 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrr</title>
+    <title>Chrr - Taste</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ocx4vba.css">
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 
-
     <script src="script.js" defer></script>
 </head>
 
-
 <body>
-    <div class="frame">
+    <header class="frame">
         <a class="site-name" href="index.html">Chrr</a>
-    </div>
-
+    </header>
 
     <nav class="nav">
         <ul>
-        <li><a class="nav-menu" href="chrr.html">RIRO</a></li>
-        <li><a class="nav-menu" href="taste.html">TASTE</a></li>
-        <li><a class="nav-menu" href="inspo.html">INSPO</a></li>
-        <li><a class="nav-menu" href="project.html">PROJECT</a></li>
-        <li><a class="nav-menu" href="memo.html">MEMO</a></li>
+            <li><a class="nav-menu" href="chrr.html">RIRO</a></li>
+            <li><a class="nav-menu" href="taste.html">TASTE</a></li>
+            <li><a class="nav-menu" href="inspo.html">INSPO</a></li>
+            <li><a class="nav-menu" href="project.html">PROJECT</a></li>
+            <li><a class="nav-menu" href="memo.html">MEMO</a></li>
         </ul>
     </nav>
 
+    <main>
+        <section class="taste">
+            <div class="introduce-container">
+                <h2 class="middle-introduce">YOUTUBE</h2>
+                <p class="small-introduce">대화하는 컨텐츠 매우 좋아함.</p>
 
-    <div class="introduce-container">
+                <div class="video-wrapper">
+                    <button class="scroll-btn left" onclick="scrollVideos(-1)">⇠</button>
 
-    <!-- YOUTUBE -->
-    <div class="introduce">
-        <h2 class="middle-introduce">YOUTUBE</h2>
-        <p class="small-introduce">남들의 대화 엿듣기</p>
-            
-        <div class="video-wrapper">
-            <button class="scroll-btn left" onclick="scrollVideos(-1)">‹</button>
-            
-            <div class="video-container">
-                            
-                <iframe src="https://www.youtube.com/embed/zNCgUmnRERE" title="YouTube video player" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/zNCgUmnRERE" title="YouTube video player"
+                            allowfullscreen></iframe>
 
-                <iframe src="https://www.youtube.com/embed/7wj_FOLvqsM" title="YouTube video player" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/7wj_FOLvqsM" title="YouTube video player"
+                            allowfullscreen></iframe>
 
-                <iframe src="https://www.youtube.com/embed/Iidf9kjea_M?si=Bp7N1GcURPNwFvVJ" title="YouTube video player" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/Iidf9kjea_M?si=Bp7N1GcURPNwFvVJ"
+                            title="YouTube video player" allowfullscreen></iframe>
 
-                <iframe src="https://www.youtube.com/embed/FQdmc_J10hY?si=8YHbP0nn9JzNjOjN" title="YouTube video player"  allowfullscreen></iframe>
-            
+                        <iframe src="https://www.youtube.com/embed/FQdmc_J10hY?si=8YHbP0nn9JzNjOjN"
+                            title="YouTube video player" allowfullscreen></iframe>
+
+                    </div>
+
+                    <button class="scroll-btn right" onclick="scrollVideos(1)">⇢</button>
+                </div>
             </div>
-            
-            <button class="scroll-btn right" onclick="scrollVideos(1)">›</button>
-        </div>
-    </div>
-            
 
+            <div class="introduce-container">
+                <h2 class="middle-introduce">PODCAST</h2>
+                <p class="small-introduce">치리로의 출퇴근 메이트<br>말동무가 생긴 느낌.. 밥친구로도 굿</p>
 
-    <!-- MUSIC -->
-    <div class="introduce">
-        <h2 class="middle-introduce">MUSIC</h2>
-        <p class="small-introduce">가사보다는 리듬 위주로 듣는 편<br>도입부 3초가 플레이리스트 합격을 결정한다.</p>
-            
-        <div class="video-wrapper">
-            <button class="scroll-btn left" onclick="scrollVideos(-1)">‹</button>
-            
-            <div class="video-container">
-                            
-                <iframe src="https://www.youtube.com/embed/NA1Qoff1Q1M?si=KQNssmz0FnAZS2ab" title="YouTube video player" allowfullscreen></iframe>
+                <div class="podcast-container">
+                    <a href="https://podcasts.apple.com/kr/podcast/%EC%97%AC%EB%91%98%ED%86%A1/id1617974770"
+                        target="_blank">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/6d/d1/43/6dd14301-bf7f-dcff-7d09-5026b89221dc/mza_2040389892221158379.jpg/600x600bb.webp"
+                            alt="여둘톡 팟캐스트 썸네일" class="podcast-thumbnail">
+                    </a>
 
-
-                <iframe src="https://www.youtube.com/embed/kKxqQSsSVWU?si=H7K-5F2qSDF9DceX" title="YouTube video player" allowfullscreen></iframe>
-
-                <iframe src="https://www.youtube.com/embed/w_lWVCv0QRs?si=D5OUKIofb0KD_D1w" title="YouTube video player" allowfullscreen></iframe></iframe>
-            
+                    <a href="https://podcasts.apple.com/kr/podcast/%EA%B0%95%EC%86%8C%ED%8C%9F/id1701380319"
+                        target="_blank">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/52/06/82/520682ad-ca77-b3e7-d506-3314ab149df5/mza_2514494111452559082.jpg/600x600bb.webp"
+                            alt="강소팔 팟캐스트 썸네일" class="podcast-thumbnail"></a>
+                </div>
             </div>
-            <button class="scroll-btn right" onclick="scrollVideos(1)">›</button>
-        </div>
-    </div>
 
+            <div class="introduce-container">
+                <h2 class="middle-introduce">PLAYLIST</h2>
+                <p class="small-introduce">매달 플레이리스트를 만들어 듣습니다<br>"작년 이맘때쯤 생각나네.."</p>
 
-            
-        
-        
-    <!-- DANCE -->
-    <div class="introduce">
-        <h2 class="middle-introduce">DANCE</h2>
-        <p class="small-introduce">내 안에 댄서의 피가 흐른다.</p>
+                <div class="music-container">
+                    <a href="https://music.apple.com/kr/playlist/25-jan/pl.u-jV89909TdY53Peq" target="_blank"
+                        class="music-box">1</a>
 
-        <div class="video-wrapper">
-            <button class="scroll-btn left" onclick="scrollVideos(-1)">‹</button>
-            
-            <div class="video-container">
-                            
-                <iframe src="https://www.youtube.com/embed/-2ciTPmy71c?si=sGJU3k74zn8WmrvJ" title="YouTube video player" allowfullscreen></iframe>
+                    <a href="https://music.apple.com/kr/playlist/25-feb/pl.u-gxbllgDt5VqZ2RM" target="_blank"
+                        class="music-box">2</a>
 
-                <iframe src="https://www.youtube.com/embed/p8rr9Ac3zoo?si=mqLQn6zEbCfJ9iUn" title="YouTube video player" allowfullscreen></iframe>
+                    <a href="https://music.apple.com/kr/playlist/25-mar/pl.u-kv9ll25t7qg6M3W" target="_blank"
+                        class="music-box">3</a>
 
-                <iframe src="https://www.youtube.com/embed/Iidf9kjea_M?si=Bp7N1GcURPNwFvVJ" title="YouTube video player" allowfullscreen></iframe>
-
-                <iframe src="https://www.youtube.com/embed/FQdmc_J10hY?si=8YHbP0nn9JzNjOjN" title="YouTube video player"  allowfullscreen></iframe>
-            
+                </div>
             </div>
-            
-            <button class="scroll-btn right" onclick="scrollVideos(1)">›</button>
-        </div>
-    </div>  
-        
-    
-
-     <!-- 팟캐스트 -->
-     <div class="introduce">
-        <h2 class="middle-introduce">PODCAST</h2>
-        <p class="small-introduce">치리로의 출퇴근메이트</p>
-
-        <a href="https://podcasts.apple.com/kr/podcast/%EC%97%AC%EB%91%98%ED%86%A1/id1617974770" target="_blank">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/6d/d1/43/6dd14301-bf7f-dcff-7d09-5026b89221dc/mza_2040389892221158379.jpg/600x600bb.webp" 
-                 alt="팟캐스트 썸네일" class="podcast-thumbnail">
-                 
-        
-        <a href="https://podcasts.apple.com/kr/podcast/%EA%B0%95%EC%86%8C%ED%8C%9F/id1701380319" target="_blank">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/52/06/82/520682ad-ca77-b3e7-d506-3314ab149df5/mza_2514494111452559082.jpg/600x600bb.webp"
-                 alt="팟캐스트 썸네일" class="podcast-thumbnail">
-
-
-        </a>
-        
-        <style>
-            .podcast-container {
-                display: flex;
-                justify-content: center; /* 가운데 정렬 */
-                align-items: center; /* 세로 중앙 정렬 */
-                gap: 250px; /* 이미지 사이 간격 조정 */
-            }
-        
-            .podcast-thumbnail {
-                width: 150px; /* 원본 600px의 1/5 크기 */
-                height: auto;
-                border: 2px solid black;
-            }
-        </style>
-        
-            
-            
-        </div>
-    </div> 
-
+        </section>
+    </main>
 </body>
+
+</html>
